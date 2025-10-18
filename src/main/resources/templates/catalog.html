@@ -11,6 +11,7 @@
 
 <body>
     <div class="container mt-5 ">
+        <a th:href="@{/cadastro}" class="btn btn-success mb-4">Novo Produto</a>
         <h1 class="mb-4">Vitrine de Produtos</h1>
         <form class="row mb-4" method="GET" action="/">
             <div class="form-group">
@@ -30,13 +31,13 @@
                         <p class="card-text text-success fw-bold" th:text="${#numbers.formatCurrency(product.price) }">R$ 0,00</p>
                     </div>
                     <div class="card-footer">
-                        <a class="btn btn-sm btn-out-primary">Ver mais informações</a>
+                        <a th:href="@{/product/{id}(id=${product.id})}" class="btn btn-sm btn-out-primary">Ver mais informações</a>
                     </div>
                 </div>
             </div>
             <br><br>
             <div class="container mt-5">
-            <a th:href="@{/cadastro}" class="btn btn-success mb-4">Novo Produto</a>
+            
                 <div class="alert alert-warning mt-4" role="alert">
                     Nenhum produto localizado para o termo da busca.
                 </div>
