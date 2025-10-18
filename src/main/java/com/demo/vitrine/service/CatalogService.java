@@ -25,6 +25,10 @@ public class CatalogService {
         }
     }
 
+    public List<Product> findAll(){
+        return products;
+    }
+
     public Product findById(Long id){
         return products.stream().filter(p -> p.getId().equals(id)).findFirst().orElse(null);
     }

@@ -11,23 +11,23 @@
 
 <body>
     <div class="container mt-5 ">
-        <h1 class="mb-4" method="" action="">Vitrine de Produtos</h1>
-        <form>
+        <h1 class="mb-4">Vitrine de Produtos</h1>
+        <form class="row mb-4" method="GET" action="/">
             <div class="form-group">
-                <input type="text" class="form-control" name="busca" placeholder="Buscar pelo nome do produto...">
+                <input type="text" class="form-control" name="busca" placeholder="Buscar pelo nome do produto..." th:value="${term}">
             </div>
             <div class="col-md-4">
                 <button type="submit" class="btn btn-primary">Enviar</button>
-                <a class="btn btn-secondary">Limpar</a>
+                <a th:href="@{/}" class="btn btn-secondary">Limpar</a>
             </div>
         </form>
         <div class="row row-cols-1  row-cols-md-4 g-4">
-            <div class="col">
+            <div class="col" th:each="product : ${products}">
                 <div class="card h-100 shadow-sm">
-                    <img src="" alt="Imagem do Produto" class="card-img-top" style="height: 200px; object-fit: cover;" >
+                    <img th:src="@{$product.urlImage}" src="" alt="Imagem do Produto" class="card-img-top" style="height: 200px; object-fit: cover;" >
                     <div class="card-body">
-                        <h5 class="card-title">Nome do Produto</h5>
-                        <p class="card-text text-success fw-bold">R$ 0,00</p>
+                        <h5 class="card-title" th:text="${product.name}">Nome do Produto</h5>
+                        <p class="card-text text-success fw-bold" th:text="${#numbers.formatCurrency(product.price) }">R$ 0,00</p>
                     </div>
                     <div class="card-footer">
                         <a class="btn btn-sm btn-out-primary">Ver mais informações</a>
