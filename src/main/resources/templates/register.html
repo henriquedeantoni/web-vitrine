@@ -9,21 +9,21 @@
 </head>
 <body>
     <div class="container mt-5">
-        <a href="" class="btn btn-outline-secondary mb-4">Voltar ao Catálogo</a>
-        <h1>Cadastrar Novo Produto</h1>
-        <form action="" method="post">
-            <input type="hidden">
+        <a th:href="@{/}" class="btn btn-outline-secondary mb-4">Voltar ao Catálogo</a>
+        <h1 th:text="${product.id} ? 'Editar Produto' : 'Cadastro Novo' ">Cadastrar Novo Produto</h1>
+        <form th:object="${product}" th:action="@{/cadastro}" method="post">
+            <input type="hidden" th:field="*{id}">
             <div class="mb-3">
                 <label for="" class="form-label">Nome do Produto</label>
-                <input type="text" class="form-control" required>
+                <input id="nome" th:field="*{name}" type="text" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Preço do Produto</label>
-                <input type="number" class="form-control" required>
+                <input th:field="*{price}" id="price" step="0.01" type="number" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Descrição</label>
-                <textarea name="" id="" class="form-control" rows="3" required> </textarea>
+                <textarea name="" id="description" th:field="*{description}" class="form-control" rows="4" required> </textarea>
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Imagem</label>
