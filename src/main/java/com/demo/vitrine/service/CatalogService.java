@@ -26,6 +26,7 @@ public class CatalogService {
     }
 
     public List<Product> findAll(){
+        System.out.println("iniciando metodo find all");
         return products;
     }
 

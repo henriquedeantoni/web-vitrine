@@ -18,8 +18,10 @@ public class CatalogController {
 
     @GetMapping("/")
     public String listProducts(@RequestParam(required = false) String term, Model model) {
+        System.out.println("iniciado controller");
         List<Product> productsList;
         if(term != null && !term.isEmpty()){
+            System.out.println("consulta service");
             productsList = service.findByName(term);
         } else {
             productsList = service.findAll();
