@@ -64,7 +64,7 @@ public class CatalogController {
             return "redirect:/";
         }
         model.addAttribute("product", product);
-        return "cadastro";
+        return "register";
     }
 
     @PostMapping("/cadastro")

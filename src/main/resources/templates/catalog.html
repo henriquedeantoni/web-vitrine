@@ -12,7 +12,7 @@
 
 <body>
     <div class="container mt-5">
-        <a th:href="@{/register}" class="btn btn-success mb-4">Novo Produto</a>
+        <a th:href="@{/cadastro}" class="btn btn-success mb-4">Novo Produto</a>
         <h1 class="mb-4">Vitrine de Produtos</h1>
 
         <form class="row mb-4" method="GET" action="/">
@@ -44,9 +44,9 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a th:href="@{/product/{id}(id=${product.id})}"
-                           class="btn btn-sm btn-outline-primary">
-                           Ver mais informações
+                        <a th:href="@{/produto/{id}(id=${product.id})}"
+                            class="btn btn-sm btn-outline-primary">
+                            Ver mais informações
                         </a>
                     </div>
                 </div>
