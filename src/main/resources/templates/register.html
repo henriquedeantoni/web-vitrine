@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,11 @@
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Imagem</label>
-                <input type="text" class="form-control" required placeholder="Ex: novo_produto.jpg">
+                <input th:field="*{urlImage}" type="text" class="form-control" required placeholder="Ex: novo_produto.jpg">
+            </div>
+            <div>
+                <video controls width="250">
+                <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c1/UPS2976_Crash_%28Truck_dashcam%29.webm/UPS2976_Crash_%28Truck_dashcam%29.webm.360p.vp9.webm" controls="true" type="video/webm" />
             </div>
             <button type="submit" class="btn btn-success">Salvar Produto</button>
         </form>

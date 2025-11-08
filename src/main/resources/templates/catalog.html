@@ -35,7 +35,7 @@
                     <img th:src="${product.urlImage}"
                          alt="Imagem do Produto"
                          class="card-img-top"
-                         style="height: 200px; object-fit: cover;">
+                         style="height: auto; max-width: 500px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title" th:text="${product.name}">Nome do Produto</h5>
                         <p class="card-text text-success fw-bold"
