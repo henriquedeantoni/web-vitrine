@@ -20,8 +20,8 @@
                 <p>Descrição detalhada do produto</p>
                 <hr>
                 <p><strong>Código do Produto:</strong><span>123</span></p>
-                <a href="" class="btn btn-warning btn-lg mt-3">Editar</a>
-                <form action="" style="display: inline-block; margin-left: 10px;">
+                <a th:href="@{/produto/editar/{id}(id=${product.id})}" class="btn btn-warning btn-lg mt-3">Editar</a>
+                <form th:action="@{/produto/excluir/{id}(id=${product.id})}" style="display: inline-block; margin-left: 10px;">
                     <button class="btn btn-danger btn-lg mt-3" type="submit">Excluir</button>
                 </form>
             </div>

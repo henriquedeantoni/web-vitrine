@@ -70,7 +70,6 @@ public class CatalogController {
     @PostMapping("/cadastro")
     public String saveProduct(Product product) {
         service.registerProduct(product);
-        System.out.println(product.getUrlImage());
         return "redirect:/";
     }
 
